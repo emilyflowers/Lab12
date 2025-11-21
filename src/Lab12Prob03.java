@@ -9,14 +9,19 @@
 
 public class Lab12Prob03 {
 	public static void main(String[] args) {
-		
+		System.out.println(reverseString("dogs"));
 	}
 
 	public static String reverseString(String str) {
-		if (str.length() == 1) {
+			return reverseString(str, str.length() - 1);
+		
+	}	
+	
+	public static String reverseString(String str, int n) {
+		if (n == 0) {
 			return str;
 		} else {
-			return str.charAt(str.length() - 1) + reverseString(str.substring(0, str.length() - 1));
+			return str.charAt(n) + reverseString(str.substring(0, str.length() - 1), n - 1);
 		}
 	}
 }
